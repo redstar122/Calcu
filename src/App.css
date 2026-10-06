@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f7f3ff 0%, #ecf9ff 100%);
+  color: #1f2937;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f7f3ff 0%, #edf7ff 100%);
+}
+
+.Header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #473b7c;
+  text-align: center;
+}
+
+.Calculator {
+  width: min(100%, 360px);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(146, 137, 201, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(64, 52, 108, 0.12);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.Display {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  padding: 18px 16px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f7f9ff 0%, #edf3ff 100%);
+  border: 1px solid rgba(122, 128, 177, 0.15);
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #1f2937;
+  box-shadow: inset 0 2px 8px rgba(88, 102, 157, 0.08);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.Button {
+  min-height: 58px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #eff4ff 0%, #dfe9ff 100%);
+  color: #1f2937;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 8px 18px rgba(90, 95, 134, 0.12);
+}
+
+.Button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.Button:active {
+  transform: translateY(0);
+}
+
+.Button.operator {
+  background: linear-gradient(180deg, #cfe7ff 0%, #bed7ff 100%);
+  color: #12315c;
+}
+
+.Button.clear {
+  background: linear-gradient(180deg, #ffd5dd 0%, #ffc1d0 100%);
+  color: #72213a;
+}
+
+.Button.equal {
+  background: linear-gradient(180deg, #bff5df 0%, #95e9c6 100%);
+  color: #174735;
+}
+
+@media (max-width: 420px) {
+  .Calculator {
+    padding: 16px;
+  }
+
+  .Keypad {
+    gap: 10px;
+  }
+
+  .Button {
+    min-height: 52px;
+    font-size: 1.05rem;
+  }
+}
